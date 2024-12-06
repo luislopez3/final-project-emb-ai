@@ -1,3 +1,9 @@
+"""
+Flask application for emotion detection.
+
+Provides routes for analyzing emotions in text and rendering the index page.
+"""
+
 from flask import Flask, render_template, request
 from EmotionDetection.emotion_detection import emotion_detector
 
@@ -27,7 +33,10 @@ def emotion_analyzer():
     dominant_emotion = response['dominant_emotion']
 
     # Return the formatted string
-    return f"For the given statement, the system response is {emotions}. The dominant emotion is {dominant_emotion}."
+    return (
+        f"For the given statement, the system response is {emotions}. "
+        f"The dominant emotion is {dominant_emotion}."
+    )
 
 @app.route("/")
 def render_index_page():
