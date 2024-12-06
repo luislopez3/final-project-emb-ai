@@ -11,7 +11,7 @@ def emotion_analyzer():
     # Retrieve the text to analyze from the request arguments
     text_to_analyze = request.args.get('textToAnalyze')
     if not text_to_analyze:
-        return "Error: No text provided for analysis."
+        return "Error: Invalid text! Please try again!"
 
     # Pass the text to the emotion_detector function
     response = emotion_detector(text_to_analyze)
